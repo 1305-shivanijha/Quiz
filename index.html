@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shivani's Quiz</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js" charset="utf-8"></script>
+
+    <style>
+        .quiz {
+            display: block;
+            background: #F5B7B1;
+            padding: 40px;
+            color: black;
+            font-size: 20px;
+        }
+
+        .quiz button {
+            display: block;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .quiz .correct {
+            background-color: #ffffff;
+            padding: 5px;
+            color: #11AF08;
+            font-weight: bold;
+        }
+
+        .quiz .incorrect {
+            background-color: #ffffff;
+            padding: 5px;
+            color: #FF0C0C;
+            font-weight: bold;
+        }
+
+            .quiiz {
+            display: block;
+            background: #AED6F1;
+            padding: 40px;
+           color: black;
+            font-size: 20px;
+        }
+
+        .quiiz button {
+            display: block;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .quiiz .correct {
+            background-color: white;
+            padding: 5px;
+            color: #11AF08;
+            font-weight: bold;
+        }
+
+        .quiiz .incorrect {
+            background-color: #ffffff;
+            padding: 5px;
+            color: #FF0C0C;
+            font-weight: bold;
+
+}
+
+
+.quiiiz {
+            display: block;
+            background: #ABEBC6;
+            padding: 40px;
+            color: black;
+            font-size: 20px;
+        }
+
+        .quiiiz button {
+            display: block;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .quiiiz .correct {
+            background-color: #ffffff;
+            padding: 5px;
+            color: #11AF08;
+            font-weight: bold;
+        }
+
+        .quiiiz .incorrect {
+            background-color: #ffffff;
+            padding: 5px;
+            color: #FF0C0C;
+            font-weight: bold;
+        }
+
+
+
+
+
+.quiiiiz {
+            display: block;
+            background: #F9E79F;
+            padding: 40px;
+            color: black;
+            font-size: 20px;
+        }
+
+        .quiiiiz button {
+            display: block;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .quiiiiz .correct {
+            background-color: #ffffff;
+            padding: 5px;
+            color: #11AF08;
+            font-weight: bold;
+        }
+
+        .quiiiiz .incorrect {
+            background-color: #ffffff;
+            padding: 5px;
+            color: #FF0C0C;
+            font-weight: bold;
+        }
+
+
+
+
+
+
+        .quizz {
+            display: block;
+            background: #EDBB99;
+            padding: 40px;
+            color: black;
+            font-size: 20px;
+        }
+
+        .quizz button {
+            display: block;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .quizz .correct {
+            background-color: #ffffff;
+            padding: 5px;
+            color: #11AF08;
+            font-weight: bold;
+        }
+
+        .quizz .incorrect {
+            background-color: #ffffff;
+            padding: 5px;
+            color: #FF0C0C;
+            font-weight: bold;
+        }
+    </style>
+
+    <script type="text/babel">
+    class Quiz extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                correct: null
+            };
+        }
+
+        answer(correct) {
+            this.setState({
+                correct
+            });
+        }
+
+        render() {
+            let question = null;
+            if (this.state.correct === null) {
+                question = <div>
+                    <button onClick={() => this.answer(false)}>a) Manmohan Singh</button>
+                    <button onClick={() => this.answer(true)}>b)  Shashi Tharoor</button>
+                    <button onClick={() => this.answer(false)}>c) Narendra Modi</button>
+                </div>;
+            }
+            let answer = null;
+            if (this.state.correct === true) {
+                answer = <div className="correct">Correct!</div>;
+            } else if (this.state.correct === false) {
+                answer = <div className="incorrect">Nope!</div>;
+            }
+
+            return <div className="quiz">
+                <p>Who is the author of the book India Shastra : Reflections on the Nation in our Time?</p>
+                {question}
+                {answer}
+            </div>;
+        }
+    }
+    ReactDOM.render(
+        <Quiz />,
+        document.getElementById('quiz')
+    );
+    </script>
+
+
+
+
+
+
+
+<script type="text/babel">
+    class Quuiz extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                correct: null
+            };
+        }
+
+        answer(correct) {
+            this.setState({
+                correct
+            });
+        }
+
+        render() {
+            let question = null;
+            if (this.state.correct === null) {
+                question = <div>
+                    <button onClick={() => this.answer(true)}>a) Andhra Pradesh</button>
+                    <button onClick={() => this.answer(false)}>b) Maharashtra</button>
+                    <button onClick={() => this.answer(false)}>c) Kerala </button>
+                </div>;
+            }
+            let answer = null;
+            if (this.state.correct === true) {
+                answer = <div className="correct">Correct!</div>;
+            } else if (this.state.correct === false) {
+                answer = <div className="incorrect"> Wrong</div>;
+            }
+
+            return <div className="quiiz">
+                <p> Kuchipudi is a dance form in India which originated in the State of ?</p>
+                {question}
+                {answer}
+            </div>;
+        }
+    }
+    ReactDOM.render(
+        <Quuiz />,
+        document.getElementById('quiiz')
+    );
+    </script>
+
+
+
+
+
+    <script type="text/babel">
+    class Quuuiz extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                correct: null
+            };
+        }
+
+        answer(correct) {
+            this.setState({
+                correct
+            });
+        }
+
+           render() {
+            let question = null;
+            if (this.state.correct === null) {
+                question = <div>
+                    <button onClick={() => this.answer(false)}>a)Chhattisgarh</button>
+                    <button onClick={() => this.answer(true)}>b) Odisha</button>
+                    <button onClick={() => this.answer(false)}>c) Jharkhand</button>
+                  
+                </div>;
+            }
+            let answer = null;
+            if (this.state.correct === true) {
+                answer = <div className="correct">Correct! </div>;
+            } else if (this.state.correct === false) {
+                answer = <div className="incorrect">Nope!</div>;
+            }
+
+            return <div className="quiiiz">
+                <p>Trade and Cultural Fare the Balijatra Festival is held every year in the Indian State of ?</p>
+                {question}
+                {answer}
+            </div>;
+        }
+    }
+    ReactDOM.render(
+        <Quuuiz />,
+        document.getElementById('quiiiz')
+    );
+    </script>
+
+
+
+    <script type="text/babel">
+    class Quuuuiz extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                correct: null
+            };
+        }
+
+        answer(correct) {
+            this.setState({
+                correct
+            });
+        }
+
+        render() {
+            let question = null;
+            if (this.state.correct === null) {
+                question = <div>
+                    <button onClick={() => this.answer(false)}>a) V. D. Savarkar</button>
+                    <button onClick={() => this.answer(true)}>b) C. R. Das</button>
+                    <button onClick={() => this.answer(false)}>c)M. G. Ranade</button>
+                </div>;
+            }
+            let answer = null;
+            if (this.state.correct === true) {
+                answer = <div className="correct">Correct!</div>;
+            } else if (this.state.correct === false) {
+                answer = <div className="incorrect">Nope!</div>;
+            }
+
+            return <div className="quiiiiz">
+                <p> Who wrote the book, India for Indians?</p>
+                {question}
+                {answer}
+            </div>;
+        }
+    }
+    ReactDOM.render(
+        <Quuuuiz />,
+        document.getElementById('quiiiiz')
+    );
+    </script>
+
+
+
+
+
+
+
+    <script type="text/babel">
+    class Quuuuiz extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                correct: null
+            };
+        }
+
+        answer(correct) {
+            this.setState({
+                correct
+            });
+        }
+
+        render() {
+            let question = null;
+            if (this.state.correct === null) {
+                question = <div>
+                    <button onClick={() => this.answer(true)}>a)Bangladesh</button>
+                    <button onClick={() => this.answer(false)}>b)Indonesia</button>
+                    <button onClick={() => this.answer(false)}>c) Maldives</button>
+                </div>;
+            }
+            let answer = null;
+            if (this.state.correct === true) {
+                answer = <div className="correct">Correct!</div>;
+            } else if (this.state.correct === false) {
+                answer = <div className="incorrect">Nope!</div>;
+            }
+
+            return <div className="quizz">
+                <p>Bishwa Ijtema is held every year in ?</p>
+                {question}
+                {answer}
+            </div>;
+        }
+    }
+    ReactDOM.render(
+        <Quuuuiz />,
+        document.getElementById('quizz')
+    );
+    </script>
+    <script type="text/babel">
+    class Quuuuuiz extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                correct: null
+            };
+        }
+
+        answer(correct) {
+            this.setState({
+                correct
+            });
+        }
+
+        render() {
+            let question = null;
+            if (this.state.correct === null) {
+                question = <div>
+                    <button onClick={() => this.answer(True)}>a) Iron craft</button>
+                    <button onClick={() => this.answer{false}}>b) Wood craft</button>
+                    <button onClick={() => this.answer(false)}>c) Bamboo craft</button>
+                </div>;
+            }
+            let answer = null;
+            if (this.state.correct === true) {
+                answer = <div className="correct">Correct!</div>;
+            } else if (this.state.correct === false) {
+                answer = <div className="incorrect">wrong </div>;
+            }
+
+            return <div className="quiiiiiz">
+                <p>What is the traditional work of the Agaria tribe?</p>
+                {question}
+                {answer}
+            </div>;
+        }
+    }
+    ReactDOM.render(
+        <Quuuuuiz />,
+        document.getElementById('quiiiiiz')
+    );
+    </script>
+
+
+</head>
+<body>
+    <h1 style=" text-align: center;"> How much you Know ?</h1>
+    <h3 style=" text-align: center;">Quiz by shivani </h3>
+    <div id="quiz"></div>
+    <div id="quiiz"></div>
+
+    <div id="quiiiz"></div>
+
+
+    <div id="quiiiiz"></div>
+    <div id="quizz"></div>
+    <div id="quiiiiiz"></div>
+
+</body>
+</html>
